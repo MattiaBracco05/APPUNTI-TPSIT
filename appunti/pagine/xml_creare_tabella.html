@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>XML· Creazione di una tabella</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- INZIO HEADER -->
+			<header id="header">
+				<h1 id="logo"><a href="https://www.instagram.com/itisrivoira/">ITIS G. RIVOIRA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li>
+							<a href="#">Appunti</a>
+							<ul>
+								<!-- DROP-DOWN MENÙ JSON -->
+								<li>
+									<a href="./json_introduzione.html">JSON</a>
+									<ul>
+										<li><a href="./json_introduzione.html">Introduzione</a></li>
+										<li><a href="./json_parse.html">Parse</a></li>
+										<li><a href="./json_creare_tabella.html">Creare una tabella</a></li>
+										<li><a href="#">Ordinare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ XML -->
+								<li>
+									<a href="./xml_introduzione.html">XML</a>
+									<ul>
+										<li><a href="./xml_introduzione.html">Introduzione</a></li>
+										<li><a href="./xml_parse.html">Parse</a></li>
+										<li><a href="#">Creare una tabella</a></li>
+										<li><a href="#">XML 4</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ REACT -->
+								<li>
+									<a href="#">REACT</a>
+									<ul>
+										<li><a href="./react_introduzione.html">Introduzione</a></li>
+										<li><a href="./react_installazione.html">Installazione NodeJS</a></li>
+										<li><a href="./react_creare_progetto.html">Creazione nuovo progetto</a></li>
+										<li><a href="./react_hooks.html">HOOKS</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- FINE HEADER -->
+
+			<!-- TEORIA -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+					<!-- TITOLO E DESCRIZIONE-->
+                    <header class="major">
+                        <h2>Creazione di una tabella contenente dati di file XML</h2>
+                        <h4>Creare una tabella contenente diversi dati provenienti dal file XML può essere utile per rappresentarli in modo chiaro all'utente</h4>
+                    </header>
+					<!-- codice -->
+                    <h1>File index.html</h1>
+					<pre>
+						<code>
+&lt;!-- RIGA E COLONNA --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-12"&gt;
+
+        &lt;!-- TABELLA --&gt;
+        &lt;div class="table-container table-responsive"&gt;
+            &lt;table id="tabella tab"&gt;
+
+                &lt;!-- TAB HEADER --&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;
+                            &lt;div class="d-flex justify-content-center header bordi"&gt;TITOLO&lt;/div&gt;
+                        &lt;/th&gt;
+                        &lt;th&gt;
+                            &lt;div class="d-flex justify-content-center header bordi"&gt;GENERE&lt;/div&gt;
+                        &lt;/th&gt;
+                        &lt;th&gt;
+                            &lt;div class="d-flex justify-content-center header bordi"&gt;ANNO&lt;/div&gt;
+                        &lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+
+                &lt;!-- TAB BODY --&gt;
+                &lt;tbody id="myTable"&gt;&lt;/tbody&gt;
+
+            &lt;/table&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+						</code>
+                    </pre>
+                    <h1>File script.js</h1>
+                    <pre>
+						<code>
+//FUNZIONE CARICA (richiamata nel body)
+const carica = () =&gt; {
+    
+    //SCARICO E PARSO IL CONTENUTO
+    fetch(URL)
+        .then((catalogo) =&gt; catalogo.text())
+        .then((dati) =&gt; {
+
+            //CREO UN OGGETTO DOM PARSER
+            let mioXML = new DOMParser();
+            //PARSING DEL TESTO
+            let parseXML = mioXML.parseFromString(dati, "text/xml")
+            
+            //VADO A CREARE DELLE VARIABILI NELLE QUALI SALVERO I DATI DEI FILM
+            let titoli = parseXML.querySelectorAll("titolo")
+            let genere = parseXML.querySelectorAll("generi genere")
+            let anno = parseXML.querySelectorAll("anno")
+            let insert = ""
+
+            //SELELZIONO IL "BODY" DELLA TABELLA (create nel file index.html)
+            const tabellaDati = document.querySelector("table tbody");
+
+            //CICLO PER IL NUMERO DI TITOLI PRESENTI NELL'ELENCO
+            for (let i = 0; i &lt; titoli.length; i++) {
+                insert += "&lt;tr class='effect'&gt;";
+                insert += `&lt;td&gt;${titoli[i].innerHTML}&lt;/td&gt;`
+                insert += `&lt;td&gt;${genere[i].attributes.value.textContent}&lt;/td&gt;`
+                insert += `&lt;td&gt;${anno[i].attributes.value.textContent}&lt;/td&gt;`
+                insert += "&lt;/tr&gt;";
+            }
+
+            //INSERISCO I DATI NELLA TABELLA
+            tabellaDati.innerHTML = insert;
+
+        })
+}
+						</code>
+					</pre>
+					<!-- descrizione codice -->
+					<h4>All'interno del file js vado a parsare il file XML, dopo di che ciclo per il numero di titoli presenti nell'elenco (= ciclare per il numero di film registrati dato che ogni film ha un titolo) e vado ad inserire nelle rispettive variabili i dati del film (quando vado a salvare i dati nelle variabili mantengo i dati scritti precedentemente (+=)), terminato il ciclo for vado ad inserire i dati all'interno della tabella (per la precisione nel body della tabella)</h4>
+                    <!-- BUTTON -->
+					<div class="row">
+						<!-- PRECEDENTE -->
+						<div class="col-4 buttonDownload">
+							<a href="./xml_parse.html" class="button fit small">INDIETRO</a>
+						</div>
+                        <!-- DOWNLOAD -->
+                        <div class="col-4 buttonDownload">
+							<a href="https://github.com/MattiaBracco05/SCUOLA/tree/main/4C/TPSIT/XML/tabella" class="button primary icon solid fa-download">ES. COMPLETO</a>
+						</div>
+						<!-- SUCCESSIVO -->
+						<div class="col-4 buttonDownload">
+                            <a href="#" class="button fit small">AVANTI</a>
+						</div>
+					</div>
+                </div>
+            </div>
+
+			<!-- INIZIO FOOTER -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/matti_bracco/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/MattiaBracco05" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bracco Mattia Sito Appunti TPSIT. All rights reserved.</li>
+				</ul>
+			</footer>
+			<!-- FINE FOOTER -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
