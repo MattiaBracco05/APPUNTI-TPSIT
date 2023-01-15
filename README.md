@@ -2,16 +2,16 @@
 
 Sito contenente gli appunti di TPSIT sui seguenti argomenti:
 - JSON
--   introduzione
--   parse
--   creare una tabella
--   ordinare una tabella
+  -  Introduzione
+  -  Parse
+  -  Creare una tabella
+  -  Ordinare una tabella
 - XML
--   introduzione
--   parse
--   creare una tabella
+  -  Introduzione
+  -  Parse
+  -  Creare una tabella
 - REACT
--   introduzione
--   creare un progetto
--   prime modifiche al progetto
--   HOOKS
+  -  Introduzione
+  -  Installazione Node JS
+  -  Creazione di un progetto
+  -  HOOKS
