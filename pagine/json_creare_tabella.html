@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>JSON · Creazione di una tabella</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- INZIO HEADER -->
+			<header id="header">
+				<h1 id="logo"><a href="https://www.instagram.com/itisrivoira/">ITIS G. RIVOIRA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li>
+							<a href="#">Appunti</a>
+							<ul>
+								<!-- DROP-DOWN MENÙ JSON -->
+								<li>
+									<a href="./json_introduzione.html">JSON</a>
+									<ul>
+										<li><a href="./json_introduzione.html">Introduzione</a></li>
+										<li><a href="./json_parse.html">Parse</a></li>
+										<li><a href="#">Creare una tabella</a></li>
+										<li><a href="#">Ordinare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ XML -->
+								<li>
+									<a href="./xml_introduzione.html">XML</a>
+									<ul>
+										<li><a href="./xml_introduzione.html">Introduzione</a></li>
+										<li><a href="./xml_parse.html">Parse</a></li>
+										<li><a href="./xml_creare_tabella.html">Creare una tabella</a></li>
+										<li><a href="#">XML 4</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ REACT -->
+								<li>
+									<a href="#">REACT</a>
+									<ul>
+										<li><a href="./react_introduzione.html">Introduzione</a></li>
+										<li><a href="./react_installazione.html">Installazione NodeJS</a></li>
+										<li><a href="./react_creare_progetto.html">Creazione nuovo progetto</a></li>
+										<li><a href="./react_hooks.html">HOOKS</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- FINE HEADER -->
+
+			<!-- TEORIA -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+					<!-- TITOLO E DESCRIZIONE-->
+                    <header class="major">
+                        <h2>Creazione di una tabella contenente dati di file JSON</h2>
+                        <h4>Creare una tabella contenente diversi dati provenienti dal file JSON può essere utile per rappresentarli in modo chiaro all'utente</h4>
+                    </header>
+					<!-- codice -->
+					<pre>
+						<code>
+let div_header = document.createElement("div");
+let div_misure = document.getElementById("misure");
+div_misure.className = "col-sm-12";
+
+//creazione header tabella
+div_header.innerHTML = "&lt;div class=\"row\"&gt;" + 
+	"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;DEVICE&lt;/div&gt;" +
+	"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;TIMESTAMP&lt;/div&gt;" +
+	"&lt;div class=\"col-sm-3 bg-secondary border d-flex justify-content-center\"&gt;TEMPERATURA&lt;br /&gt;[°Cx10]&lt;/div&gt;" +
+	"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;UMIDITA'&lt;br /&gt;[%RH]&lt;/div&gt;" +
+	"&lt;/div&gt;";
+
+//inserimento dell'header
+div_misure.appendChild(div_header);
+
+//ciclo for per l'inserimento dei dati in una riga della tabella
+for (var misura of misure)  {
+	let div_row = document.createElement("div");
+	div_row.innerHTML = "&lt;div class=\"row\"&gt;" + 
+		"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;" + misura.lora_device_id + "&lt;/div&gt;" +
+		"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;" + cleanTimestamp(misura.measured_at) + "&lt;/div&gt;" +
+		"&lt;div class=\"col-sm-3 bg-secondary border d-flex justify-content-center\"&gt;" + cleanTemperature(misura.data.sensor1.lowRes.temperature) + "&lt;/div&gt;" +
+		"&lt;div class=\"col-sm-3 bg-info border d-flex justify-content-center\"&gt;" + misura.data.sensor1.lowRes.humidity + "&lt;/div&gt;" +
+		"&lt;/div&gt;";
+	
+	//aggiungo la riga contenente i dati appena creata nella tabella
+	div_misure.appendChild(div_row);
+}
+						</code>
+					</pre>
+					<!-- descrizione codice -->
+					<h4>Dopo aver creato un header (intestazione) della tabella e dopo averlo inserito nella pagina web procedo a ciclare per il numero di misurazioni da caricare all'interno della tabella (creo dinamicamente una nuova riga per ogni misurazione)</h4>
+					<!-- DOWNLLOAD -->
+                    <!-- BUTTON -->
+					<div class="row">
+						<!-- PRECEDENTE -->
+						<div class="col-4 buttonDownload">
+							<a href="./json_parse.html" class="button fit small">INDIETRO</a>
+						</div>
+                        <!-- DOWNLOAD -->
+                        <div class="col-4 buttonDownload">
+							<a href="https://github.com/MattiaBracco05/SCUOLA/tree/main/4C/TPSIT/JSON/tabella_json" class="button primary icon solid fa-download">ES. COMPLETO</a>
+						</div>
+						<!-- SUCCESSIVO -->
+						<div class="col-4 buttonDownload">
+                            <a href="#" class="button fit small">AVANTI</a>
+						</div>
+					</div>
+                </div>
+            </div>
+
+			<!-- INIZIO FOOTER -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/matti_bracco/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/MattiaBracco05" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bracco Mattia Sito Appunti TPSIT. All rights reserved.</li>
+				</ul>
+			</footer>
+			<!-- FINE FOOTER -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

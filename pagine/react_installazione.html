@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>REACT · Installazione</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- INZIO HEADER -->
+			<header id="header">
+				<h1 id="logo"><a href="https://www.instagram.com/itisrivoira/">ITIS G. RIVOIRA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li>
+							<a href="#">Appunti</a>
+							<ul>
+								<!-- DROP-DOWN MENÙ JSON -->
+								<li>
+									<a href="./json_introduzione.html">JSON</a>
+									<ul>
+										<li><a href="./json_introduzione.html">Introduzione</a></li>
+										<li><a href="./json_parse.html">Parse</a></li>
+										<li><a href="./json_creare_tabella.html">Creare una tabella</a></li>
+										<li><a href="#">Ordinare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ XML -->
+								<li>
+									<a href="#">XML</a>
+									<ul>
+										<li><a href="./xml_introduzione.html">Introduzione</a></li>
+										<li><a href="./xml_parse.html">Parse</a></li>
+										<li><a href="./xml_creare_tabella.html">Creare una tabella</a></li>
+										<li><a href="#">XML 4</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ REACT -->
+								<li>
+									<a href="#">REACT</a>
+									<ul>
+										<li><a href="./react_introduzione.html">Introduzione</a></li>
+										<li><a href="#">Installazione NodeJS</a></li>
+										<li><a href="./react_creare_progetto.html">Creazione nuovo progetto</a></li>
+										<li><a href="./react_hooks.html">HOOKS</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- FINE HEADER -->
+
+			<!-- TEORIA -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+					<!-- DESCRIZIONE npm-->
+                    <header class="major">
+                        <h2>VERIFICA INSTALLAZIONE PORTALE NPM</h2>
+                        <p>l'npm è un portale contenente diversi moduli già pronti e utilizzabili per i nostri progetti</p>
+                    </header>
+
+                    <!-- codice verifica installazione portale npm -->
+                    <h4>Verificare che esso sia installato eseguendo il seguente comando nel terminale:</h4>
+					<pre>
+						<code>
+npm -v
+						</code>
+                    </pre>
+
+                    <!-- ERRORE Node JS-->
+					<a name="soluzione"></a>
+                    <header class="major">
+                        <h2>PROBLEMA VERSIONE Node JS</h2>
+                        <p>Potrebbe succedere che durante la creazione di un progetto il terminale restituisca un errore riguardante la versione di Node JS</p>
+                    </header>
+
+                    <!-- codice errore Node JS -->
+                    <pre>
+                        <code>
+You are running Node 12.22.9.
+
+Create React App requires Node 14 or higher.
+Please update your version of Node.
+                        </code>
+                    </pre>
+                    <h4>Qui di seguito è riportata la procedura per correggere l'errore</h4>
+                    <!-- comandi da eseguire -->
+					<pre>
+						<code>
+sudo npm install -g n
+(Installa il comando "n")
+
+sudo n stable
+(Installa l'ultima versione stabile di Node JS)	
+                        </code>
+                    </pre>
+                    <h4><font color="yellow">Dopo aver eseguito questi 2 comandi assicurarsi di chiudere il terminale e riaprilo, a questo punto sarà possibile creare il nuovo progetto</font></h4>
+
+					<!-- INSTALLAZIONE ESTENSIONE -->
+                    <header class="major">
+                        <h2>INSTALLAZIONE ESTENSIONE Visual Studio Code</h2>
+                        <p>Aprire il software Visual Studio Code e dal menù a tendina installare l'estensione "ES7+ React"</p>
+                    </header>
+
+					<!-- BUTTON -->
+					<div class="row">
+						<!-- PRECEDENTE -->
+						<div class="col-4 buttonDownload">
+							<a href="./react_introduzione.html" class="button fit small">PRECEDENTE</a>
+						</div>
+						<!-- SUCCESSIVO -->
+						<div class="col-4 off-4 buttonDownload">
+							<a href="./react_creare_progetto.html" class="button fit small">AVANTI</a>
+						</div>
+					</div>
+
+                </div>
+            </div>
+
+			<!-- INIZIO FOOTER -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/matti_bracco/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/MattiaBracco05" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bracco Mattia Sito Appunti TPSIT. All rights reserved.</li>
+				</ul>
+			</footer>
+			<!-- FINE FOOTER -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
