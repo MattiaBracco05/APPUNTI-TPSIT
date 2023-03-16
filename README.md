@@ -17,4 +17,8 @@ URL del sito: https://mattiabracco05.github.io/APPUNTI-TPSIT/
   -  Introduzione
   -  Installazione Node JS
   -  Creazione di un progetto
+  -  Uso dei target
+  -  Uso dei cookie
+  -  Variabili d'ambiente
+  -  COMPONENTI
   -  HOOKS
