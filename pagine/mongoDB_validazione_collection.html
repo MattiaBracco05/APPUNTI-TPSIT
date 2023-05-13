@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mongo DB · Validazione collection</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- INZIO HEADER -->
+			<header id="header">
+				<h1 id="logo"><a href="https://www.instagram.com/itisrivoira/" target="new">ITIS G. RIVOIRA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li>
+							<a href="#">Appunti</a>
+							<ul>
+								<!-- DROP-DOWN MENÙ JS -->
+								<li>
+									<a href="./js_introduzione.html">JS</a>
+									<ul>
+										<li><a href="./js_introduzione.html">Introduzione</a></li>
+										<li><a href="./js_operatore_ternario.html">Operatore ternario</a></li>
+										<li><a href="./js_esercizi.html">Esercizi</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ JSON -->
+								<li>
+									<a href="./json_introduzione.html">JSON</a>
+									<ul>
+										<li><a href="./json_introduzione.html">Introduzione</a></li>
+										<li><a href="./json_parse.html">Parse</a></li>
+										<li><a href="./json_creare_tabella.html">Creare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ XML -->
+								<li>
+									<a href="./xml_introduzione.html">XML</a>
+									<ul>
+										<li><a href="./xml_introduzione.html">Introduzione</a></li>
+										<li><a href="./xml_parse.html">Parse</a></li>
+										<li><a href="./xml_creare_tabella.html">Creare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ REACT -->
+								<li>
+									<a href="./react_introduzione.html">REACT</a>
+									<ul>
+										<li><a href="./react_introduzione.html">Introduzione</a></li>
+										<li><a href="./react_installazione.html">Installazione NodeJS</a></li>
+										<li><a href="./react_creare_progetto.html">Creazione nuovo progetto</a></li>
+										<li><a href="./react_uso_dei_target.html">Uso dei target</a></li>
+										<li><a href="./react_uso_dei_cookie.html">Uso dei cookie</a></li>
+										<li><a href="./react_variabili_d_ambiente.html">Variabili d'ambiente</a></li>
+										<li><a href="./react_componenti_di_base.html">COMPONENTI</a></li>
+										<li><a href="./react_hooks.html">HOOKS</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ MONGO DB -->
+								<li>
+									<a href="./mongoDB_introduzione.html">MONGO DB</a>
+									<ul>
+										<li><a href="./mongoDB_introduzione.html">Introduzione</a></li>
+										<li><a href="./mongoDB_installazione.html">Installazione Mongo DB e Mongo SH</a></li>
+										<li><a href="./mongoDB_variabili_d_ambiente.html">Configurare variabili d'ambiente su Windows</a></li>
+										<li><a href="./mongoDB_configurazione_terminale.html">Configurazione DB da terminale</a></li>
+										<li><a href="./mongoDB_confgiurazione_grafica.html">Configurazione DB tramite interfaccia grafica</a></li>
+										<li><a href="#">Validazione delle collection</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- FINE HEADER -->
+
+			<!-- TEORIA -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+					<!-- VALIDATION -->
+                    <header class="major">
+                        <h2>VALIDAZIONE DELLE COLLECTION</h2>
+                        <p>In questa pagina è spiegato come creare delle regole di validazione per le collection</p>
+                    </header>
+
+					<h4>Le validation vengono associate alle collection di Mongo DB e il loro funzionamento è molto simile ad un DTD per i file XML, il loro compito è quello di assicurarsi l'omogenità dei dati inseriti e il tipo di valore associato ad una determinata chiave</h4>
+					
+					<!-- VALIDATION -->
+					<h2><font color="blue">Validation code</font></h2>
+					<p>Esempio di codice per la validazione di una collection
+						</br>"additionalProperties: false" impone che non ci siano informazioni extra.
+						</br>"required" impone che le chiavi seguenti sia presenti.
+						</br>Nelle "properties" è possibile scegliere una chiave (esempio: 'nome') e imprre un determinato tipo di valore (esempio: bsonType: 'string').
+
+					</p>
+					<img src="../images/MONGODB/validation/validation.PNG" alt="" width="70%"/>
+
+					<!-- NON OMOGENEA -->
+					<h2><font color="blue">Collection non omogenea </font><i class='fas fa-times' style='font-size:32px; color:red'></i></a></h2>
+					<p>Esempio di collection che non rispetta il file di validation
+						</br>Cliccando su "load" nella finestra "failed validation" della scheda "validation" viene mostrato l'oggetto nella collection che non rispetta il file di validazione.
+						</br>Cliccando su "load" nella finestra "passed validation" della scheda "validation" non vengono mostrati file.
+					</p>
+					<img src="../images/MONGODB/validation/non_omogenea.PNG" alt="" width="70%"/>
+					<img src="../images/MONGODB/validation/validation_error.PNG" alt="" width="70%"/>
+
+					<!-- OMOGENEA -->
+					<h2><font color="blue">Collection omogenea </font><i class='fas fa-check' style='font-size:32px; color:green'></i></a></h2>
+					<p>Esempio di collection che rispetta il file di validation
+						</br>Cliccando su "load" nella finestra "failed validation" della scheda "validation" non vengono mostrati file (tutti validi).
+						</br>Cliccando su "load" nella finestra "passed validation" della scheda "validation" viene mostarto il documento valido.
+					</p>
+					<img src="../images/MONGODB/validation/omogenea.PNG" alt="" width="70%"/>
+					<img src="../images/MONGODB/validation/validation_pass.PNG" alt="" width="70%"/>
+
+					<!-- INIZIO BUTTON -->
+					<!-- TORNA SU -->
+					<div class="row">
+						<div class="col-2 off-5 buttonDownload">
+							<a href="#" class="button fit small">TORNA SU <i class="far fa-arrow-alt-circle-up"></i></a>
+						</div>
+					</div>
+					<div class="row">
+						<!-- PRECEDENTE -->
+						<div class="col-4 buttonDownload">
+							<a href="./mongoDB_configurazione_terminale.html" class="button fit small">INDIETRO</a>
+						</div>
+						<!-- SUCCESSIVO -->
+						<div class="col-4 off-4 buttonDownload">
+							<a href="#" class="button fit small">AVANTI</a>
+						</div>
+					</div>
+					<!-- FINE BUTTON -->
+
+                </div>
+            </div>
+
+			<!-- INIZIO FOOTER -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/matti_bracco/" target="new" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/MattiaBracco05" target="new" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bracco Mattia Sito Appunti TPSIT. All rights reserved.</li>
+				</ul>
+			</footer>
+			<!-- FINE FOOTER -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

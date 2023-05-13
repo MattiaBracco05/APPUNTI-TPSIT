@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mongo DB · Variabili d'ambiente</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- INZIO HEADER -->
+			<header id="header">
+				<h1 id="logo"><a href="https://www.instagram.com/itisrivoira/" target="new">ITIS G. RIVOIRA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li>
+							<a href="#">Appunti</a>
+							<ul>
+								<!-- DROP-DOWN MENÙ JS -->
+								<li>
+									<a href="./js_introduzione.html">JS</a>
+									<ul>
+										<li><a href="./js_introduzione.html">Introduzione</a></li>
+										<li><a href="./js_operatore_ternario.html">Operatore ternario</a></li>
+										<li><a href="./js_esercizi.html">Esercizi</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ JSON -->
+								<li>
+									<a href="./json_introduzione.html">JSON</a>
+									<ul>
+										<li><a href="./json_introduzione.html">Introduzione</a></li>
+										<li><a href="./json_parse.html">Parse</a></li>
+										<li><a href="./json_creare_tabella.html">Creare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ XML -->
+								<li>
+									<a href="./xml_introduzione.html">XML</a>
+									<ul>
+										<li><a href="./xml_introduzione.html">Introduzione</a></li>
+										<li><a href="./xml_parse.html">Parse</a></li>
+										<li><a href="./xml_creare_tabella.html">Creare una tabella</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ REACT -->
+								<li>
+									<a href="./react_introduzione.html">REACT</a>
+									<ul>
+										<li><a href="./react_introduzione.html">Introduzione</a></li>
+										<li><a href="./react_installazione.html">Installazione NodeJS</a></li>
+										<li><a href="./react_creare_progetto.html">Creazione nuovo progetto</a></li>
+										<li><a href="./react_uso_dei_target.html">Uso dei target</a></li>
+										<li><a href="./react_uso_dei_cookie.html">Uso dei cookie</a></li>
+										<li><a href="./react_variabili_d_ambiente.html">Variabili d'ambiente</a></li>
+										<li><a href="./react_componenti_di_base.html">COMPONENTI</a></li>
+										<li><a href="./react_hooks.html">HOOKS</a></li>
+									</ul>
+								</li>
+								<!-- DROP-DOWN MENÙ MONGO DB -->
+								<li>
+									<a href="./mongoDB_introduzione.html">MONGO DB</a>
+									<ul>
+										<li><a href="./mongoDB_introduzione.html">Introduzione</a></li>
+										<li><a href="./mongoDB_installazione.html">Installazione Mongo DB e Mongo SH</a></li>
+										<li><a href="#">Configurare variabili d'ambiente su Windows</a></li>
+										<li><a href="./mongoDB_configurazione_terminale.html">Configurazione DB da terminale</a></li>
+										<li><a href="./mongoDB_confgiurazione_grafica.html">Configurazione DB tramite interfaccia grafica</a></li>
+										<li><a href="./mongoDB_validazione_collection.html">Validazione delle collection</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- FINE HEADER -->
+
+			<!-- TEORIA -->
+            <div id="main" class="wrapper style1">
+                <div class="container">
+					<!-- I DATABASE -->
+                    <header class="major">
+                        <h2>VARIABILI D'AMBIENTE</h2>
+                    </header>
+
+                    <!-- VARIABILI D'AMBIENTE -->
+                    <h2><font color="blue">Configurazione (passi da eseguire su Windows)</font></h2>
+					<h4>· Le variabili di sistema vengono applicate a tutti gli utenti presenti sulla macchina
+						</br>· Le variabili d'utente vengono impostate solo per il singolo utente
+					</h4>
+
+					<!-- IMMAGINE e DESCRIZIONE Step 1 -->
+					<h3>Step 1</h3>
+					<p>Entrare nella sottocartella "bin" del programma Mongo DB e copiare il percorso (doppio click sulla barra in alto --> si evidenzia --> Ctrl + C)</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/1.png" alt="" width="50%"/>
+					<!-- IMMAGINE e DESCRIZIONE Step 2 -->
+					<h3>Step 2</h3>
+					<p>Aprire una nuova finestra dell'esplora risorse, fare click con il tasto destro su "questo PC" e selezionare la voce "proprietà"</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/2.png" alt="" width="50%"/>					
+					<!-- IMMAGINE e DESCRIZIONE Step 3 -->
+					<h3>Step 3</h3>
+					<p>A questo punto si aprirà una finestra delle impoostazioni nella quale bisogna cliccare su "impostazioni di sistema avanzate"</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/3.png" alt="" width="50%"/>
+					<!-- IMMAGINE e DESCRIZIONE Step 4 -->
+					<h3>Step 4</h3>
+					<p>Cliccare su "variabili d'ambiente"</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/4.png" alt="" width="50%"/>
+					<!-- IMMAGINE e DESCRIZIONE Step 5 -->
+					<h3>Step 5</h3>
+					<p>Cercare nelle variabili di sistema la voce "path" e cliccare su "modifica"</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/5.png" alt="" width="50%"/>
+					<!-- IMMAGINE e DESCRIZIONE Step 6 -->
+					<h3>Step 6</h3>
+					<p>Cliccare su "nuovo" e aggiungere il percorso copiato allo Step 1, a questo punto confermare le operazioni cliccando per 2 volte sulla voce "ok" delle due finestre aperte</p>
+					<img src="../images/MONGODB/variabili_d_ambiente/6.png" alt="" width="50%"/>
+
+					<h4></br><font color="lightgreen">A questo punto si è in grado di aprire la shell di Mongo DB normalmente dal terminale senza dover entrare tutte le volte all'interno della cartella bin.</font></h4>
+
+					<!-- INIZIO BUTTON -->
+					<!-- TORNA SU -->
+					<div class="row">
+						<div class="col-4 off-4 buttonDownload">
+							<a href="#" class="button fit small">TORNA SU <i class="far fa-arrow-alt-circle-up"></i></a>
+						</div>
+					</div>
+					<div class="row">
+						<!-- PRECEDENTE -->
+						<div class="col-4 buttonDownload">
+							<a href="./mongoDB_installazione.html" class="button fit small">INDIETRO</a>
+						</div>
+						<!-- SUCCESSIVO -->
+						<div class="col-4 off-4 buttonDownload">
+							<a href="./mongoDB_configurazione_terminale.html" class="button fit small">AVANTI</a>
+						</div>
+					</div>
+					<!-- FINE BUTTON -->
+
+                </div>
+            </div>
+
+			<!-- INIZIO FOOTER -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/matti_bracco/" target="new" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/MattiaBracco05" target="new" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Bracco Mattia Sito Appunti TPSIT. All rights reserved.</li>
+				</ul>
+			</footer>
+			<!-- FINE FOOTER -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
