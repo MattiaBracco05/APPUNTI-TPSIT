@@ -31,4 +31,5 @@ URL del sito: https://mattiabracco05.github.io/APPUNTI-TPSIT/
   - Configurazione variabili di sistema (su Windows)
   - Configurazione DB da terminale
   - Configurazione DB da interfaccia grafica
+  - Validazione delle collections
  - JAVA 
