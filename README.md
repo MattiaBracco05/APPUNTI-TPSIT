@@ -27,7 +27,8 @@ URL del sito: https://mattiabracco05.github.io/APPUNTI-TPSIT/
   -  HOOKS
 - MONGO DB  
   - Introduzione
-  - Installazione
+  - Installazione Mongo DB + Compass e Shell Mopngo DB
+  - Configurazione variabili di sistema (su Windows)
   - Configurazione DB da terminale
   - Configurazione DB da interfaccia grafica
  - JAVA 
