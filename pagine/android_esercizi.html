@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>REACT · Hooks</title>
+		<title>Android · Esercizi</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -40,7 +40,7 @@
                                     <li><a href="./react_uso_dei_cookie.html">Uso dei cookie</a></li>
                                     <li><a href="./react_variabili_d_ambiente.html">Variabili d'ambiente</a></li>
                                     <li><a href="./react_componenti_di_base.html">COMPONENTI</a></li>
-                                    <li><a href="#">HOOKS</a></li>
+                                    <li><a href="./react_hooks.html">HOOKS</a></li>
                                 </ul>
                             </li>
                             <!-- DROP-DOWN MENÙ JSON -->
@@ -82,16 +82,17 @@
                                 <a href="./java_introduzione.html">JAVA</a>
                                 <ul>
                                     <li><a href="./java_introduzione.html">Introduzione</a></li>
-                                    <li><a href="./java_esercizi.html">Esercizi</a></li>
-                                </ul>
+									<li><a href="./java_esercizi.html">Esercizi</a></li>
+
+								</ul>
                             </li>
                             <!-- DROP-DOWN MENÙ ANDROID -->
                             <li>
                                 <a href="./android_introduzione.html">ANDROID</a>
                                 <ul>
                                     <li><a href="./android_introduzione.html">Introduzione</a></li>
-                                    <li><a href="./android_esercizi.html">Esercizi</a></li>
-                                </ul>
+									<li><a href="#">Esercizi</a></li>
+								</ul>
                             </li>
                             <!-- DROP-DOWN MENÙ ESTENSIONI VSC -->
                             <li>
@@ -107,96 +108,64 @@
 			<!-- TEORIA -->
             <div id="main" class="wrapper style1">
                 <div class="container">
-					<!-- CARD CON REACT HOOKS -->
+                    <!-- ACRONIMO E DESCRIZIONE -->
                     <header class="major">
-                        <h2>REACT HOOKS</h2>
-                        <p>Qui sotto sono riportati gli HOOKS utilizzati</p>
+                        <h2>Esercizi Android</h2>
+                        <p>Ecco riportati alcuni esercizi ordinati in base alla difficoltà e alle competenze richieste</p>
                     </header>
 
-                    <!-- INIZIO IMMAGINI DI NAVIGAZIONE -->
-					<!-- INIZIO RIGA 1 -->
-                    <div class="row justify-content-center mt-3">
-                        <!-- Card 1 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useState.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use State</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Ti consente di aggiungere una variabile di stato al tuo componente utile per salvare dei dati</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useEffect.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use Effect</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Ti consente di sincronizzare un componente con un sistema esterno (asincrono)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useLayoutEffect.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use Layout Effect</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Simile allo "Use Effect", si attiva prima che il browser ridisegni lo schermo (sincrono)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useRef.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use Ref</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Ti consente di fare riferimento a un valore non necessario per il rendering</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- FINE RIGA 1 -->
-					<!-- INIZIO RIGA 2 -->
-					<div class="row justify-content-center mt-3">
-                        <!-- Card 1 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useNavigate.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use Navigate</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Ti consente di passare da un componente all’altro all’interno di una funzione</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="col-3 mb-3">
-                            <div class="card">
-                                <a href="./hook_useState.html"><img src="../images/REACT/logo_card.jpeg" alt="" width="100%"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title titoloCard">Use Context</h5>
-                                    <p class="card-text mb-5 descrizioneCrad">Ti consente di gestire uno stato a livello globale, può essere usato insieme all'hook useState</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<!-- FINE RIGA 2 -->
+					<!-- TABELLA ESERCIZI -->
+					<section>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Titolo</th>
+										<th>Descrizione</th>
+										<th>Collegamento</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Airplane Mode</td>
+										<td>Mostra lo stato della modalità aereo (gestione delle permission)</td>
+										<td><a href="https://github.com/MattiaBracco05/SCUOLA/tree/main/5L/TPSIT/ANDROID/AirplaneMode.zip" target="new" class="button fit small">VEDI ESERCIZIO</a></td>
+									</tr>
+									<tr>
+										<td>Calcolatrice (base)</td>
+										<td>Semplice calcolatrice non scientifica</td>
+										<td><a href="https://github.com/MattiaBracco05/SCUOLA/tree/main/5L/TPSIT/ANDROID/Calcolatrice_base.zip" target="new" class="button fit small">VEDI ESERCIZIO</a></td>
+									</tr>
+									<tr>
+										<td>Calcolatrice (con 4 listener)</td>
+										<td>Esercizio precedente modificato in modo tale che implementasse tutti i 4 tipi di listener</td>
+										<td><a href="https://github.com/MattiaBracco05/SCUOLA/tree/main/5L/TPSIT/ANDROID/Calcolatrice_con_4_listener.zip" target="new" class="button fit small">VEDI ESERCIZIO</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
 
-                    <!-- FINE IMMAGINI DI NAVIGAZIONE -->
-
-					<!-- BUTTON -->
+					<!-- INIZIO BUTTON -->
+					<!-- TORNA SU -->
+					<div class="row">
+						<div class="col-12  buttonDownload">
+							<a href="#" class="button fit small">TORNA SU <i class="far fa-arrow-alt-circle-up"></i></a>
+						</div>
+					</div>
+					<!-- ALTRE PAGINE -->
 					<div class="row">
 						<!-- PRECEDENTE -->
 						<div class="col-4 buttonDownload">
-							<a href="./react_componenti_di_base.html" class="button fit small">INDIETRO</a>
+							<a href="./android_introduzione.html" class="button fit small">INDIETRO</a>
 						</div>
 						<!-- SUCCESSIVO -->
 						<div class="col-4 off-4 buttonDownload">
 							<a href="../index.html" class="button fit small">HOME</a>
 						</div>
 					</div>
-                    
+					<!-- FINE BUTTON -->
+
                 </div>
             </div>
 
@@ -215,14 +184,14 @@
 		</div>
 
 		<!-- Scripts -->
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/jquery.scrolly.min.js"></script>
-		<script src="../assets/js/jquery.dropotron.min.js"></script>
-		<script src="../assets/js/jquery.scrollex.min.js"></script>
-		<script src="../assets/js/browser.min.js"></script>
-		<script src="../assets/js/breakpoints.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

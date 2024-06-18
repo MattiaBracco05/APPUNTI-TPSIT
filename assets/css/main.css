@@ -66,11 +66,19 @@ input, select, textarea {
 	appearance: none;
 }
 
+.centraImmagine {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* BUTTON PER IL DOWNLOAD DEI FILE */
 .buttonDownload {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	margin-top: 3vh;
 }
 /* ANIMAZIONE QUANDO VIENE CLICCATO */
 .buttonDownload:active {

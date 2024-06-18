@@ -82,6 +82,7 @@
                                 <a href="./java_introduzione.html">JAVA</a>
                                 <ul>
                                     <li><a href="./java_introduzione.html">Introduzione</a></li>
+                                    <li><a href="./java_esercizi.html">Esercizi</a></li>
                                 </ul>
                             </li>
                             <!-- DROP-DOWN MENÙ ANDROID -->
@@ -89,6 +90,7 @@
                                 <a href="#">ANDROID</a>
                                 <ul>
                                     <li><a href="#">Introduzione</a></li>
+                                    <li><a href="./android_esercizi.html">Esercizi</a></li>
                                 </ul>
                             </li>
                             <!-- DROP-DOWN MENÙ ESTENSIONI VSC -->
@@ -105,11 +107,182 @@
 			<!-- TEORIA -->
             <div id="main" class="wrapper style1">
                 <div class="container">
-					<!-- I DATABASE -->
+					<!-- Android -->
                     <header class="major">
                         <h2>Android</h2>
-                        <p>Inserire descrizione</p>
+                        <p>Android è un sistema operativo sviluppato da Google, progettato principalmente per dispositivi mobili come smartphone e tablet. È basato su una versione modificata del kernel Linux ed è open source, il che significa che il suo codice sorgente è disponibile per chiunque voglia studiarlo, modificarlo e distribuirlo</p>
                     </header>
+
+					<!-- TABELLA Android Vs iOS -->
+                    <h2><font color="blue">Android Vs iOS</font></h2>
+                    <section>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Aspetto</th>
+										<th>Android</th>
+										<th>iOS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Software</td>
+										<td>Android Studio</td>
+										<td>Xcode</td>
+									</tr>
+                                    <tr>
+										<td>Linguaggio di programmazione</td>
+										<td>Java</td>
+										<td>Swift</td>
+									</tr>
+                                    <tr>
+										<td>Estensione del file</td>
+										<td>.apk</td>
+										<td>.ipa</td>
+									</tr>
+                                    <tr>
+										<td>Ciclo di distribuzione</td>
+										<td>Google Play Store</td>
+										<td>App store di Apple</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- CHE COS'E' UN ACTIVITY? -->
+                    <h2><font color="blue">Che cos’è una "Activity"?</font></h2>
+                    <h4>Una "Activity" è un componente di una applicazione che rappresenta una singola schermata di interfaccia per l’utente.
+                        <br/>Ogni schermata dell'applicazione è gestita da una Activity. Le Activities sono fondamentali per la navigazione e l'interazione dell'utente con una app Android.
+                        <br/>Ogni Activity ha il proprio ciclo di vita, che comprende eventi come la creazione, la distruzione, la pausa e la ripresa, che consentono all'applicazione di rispondere dinamicamente a determinati input dell'utente e ad altre situazioni, come per esempio il cambio di orientamento del dispositivo.</h4>
+
+                    <!-- CICLO DI VITA -->
+                    <h2><font color="blue">Il ciclo di vita di una Activity</font></h2>
+					<div class="centraImmagine"><img src="../images/ANDROID/CicloDiVita.png" alt=""/></div>
+					<p>Il ciclo di vita di una Activity comprende una serie di stati attraversati durante il suo ciclo di vita.
+                        <br/>Questi stati includono:
+                        <li>Creazione - metodo onCreate()
+                            <br/>Questo metodo viene chiamato quando una Activity viene avviata per la 1° volta. Qui vengono inizializzati gli elementi dell'interfaccia utente e vengono effettuate le operazioni di inizializzazione
+                        
+                        <li>Avvio - metodo onStart()
+                            <br/>Dopo il metodo onCreate(), l'Activity passa allo stato di avvio, dove diventa visibile all'utente, ma non è ancora in primo piano. Durante questo stato viene richiamato il metodo onStart()
+
+                        <li>Resuming - metodo onResume()
+                            <br/>Quando l'Activity viene resa visibile e viene portata in primo piano, passa allo stato di "Resuming". Durante questo stato, l'Activity è attiva e pronta per l'interazione dell'utente
+
+                        <li>Pausa - metodo onPause()
+                            <br/>Quando un'altra Activity viene avviata l'Activity corrente perde il focus passando allo stato di "Pausa". In questo stato, l'Activity è ancora visibile, ma non si trova più in primo piano
+
+                        <li>Sospensione - metodo onStop()
+                            <br/>Quando una Activity non è più visibile all'utente, entra nello stato di "Sospensione". Questo accade quando un'altra Activity prende il suo posto o quando l'utente esce dall'applicazione. Durante questo stato, vengono liberate risorse non essenziali.
+
+                        <li>Distruzione - metodo onDestroy()
+                            <br/>Quando una Activity viene terminata o distrutta dal sistema operativo, passa allo stato di "Distruzione". Questo accade quando l'utente chiude l'applicazione o quando il sistema operativo libera risorse dalle applicazioni che si trovano nello stato di sospensione.
+					</p>
+
+                    <!-- 4 TIPI DI LISTENER -->
+                    <h2><font color="blue">4 Tipi di listener</font></h2>
+
+                    <!-- 1° -->
+                    <h4>1 - Direttamente sul pulsante</h4>
+                    <p>
+                        Posso impostare un listener direttamente sul pulsante nel codice Java utilizzando il metodo setOnClickListener(). Ad esempio, all'interno del metodo onCreate() di una Activity
+                    </p>
+                    <!-- codice -->
+					<pre>
+						<code>
+Button myButton = findViewById(R.id.my_button);
+myButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        <font color="blue">//Qui gestisco l'evento del click</font>
+    }
+});                     
+						</code>
+					</pre>
+
+                    <!-- 2° -->
+                    <h4>2 - Nel file .xml dei componenti</h4>
+                    <p>
+                        Posso impostare un onClick listener direttamente nel file XML del layout semplicemente aggiungendo l'attributo “android:onClick” al pulsante, specificando il nome del metodo che gestirà l'evento
+                    </p>
+                    <!-- codice -->
+					<pre>
+						<code>
+&lt;Button
+android:id="@+id/my_button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Click Me"
+android:onClick="myButtonClickHandler" /&gt;      
+						</code>
+					</pre>     
+
+                    <!-- 3° -->
+                    <h4>3 - Istanziando un metodo</h4>
+                    <p>
+                        Posso impostare un onClick listener richiamando un metodo direttamente all'interno del codice Java. In questo caso, il metodo è definito nella stessa classe dell'Activity che contiene il pulsante
+                    </p>
+                    <!-- codice -->
+					<pre>
+						<code>
+Button myButton = findViewById(R.id.my_button);
+myButton.setOnClickListener(this::myButtonClickHandler);
+						</code>
+					</pre>  
+
+                    <!-- 4° -->
+                    <h4>4 - Implementando OnClickListener nell'Activity</h4>
+                    <p>
+                        Infine, come 4° modo posso implementare l'interfaccia direttamente nella classe Activity e gestire l'evento direttamente all'interno di essa
+                    </p>
+                    <!-- codice -->
+					<pre>
+						<code>
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button myButton = findViewById(R.id.my_button);
+        myButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        <font color="blue">//Qui gestisco l'evento del click</font>
+    }
+}                       
+						</code>
+					</pre> 
+
+					<!-- IL COMANDO INTENT -->
+                    <h2><font color="blue">Il comando "Intent"</font></h2>
+                    <h4>Il comando "Intent" in Android è un meccanismo fondamentale per consentire alle diverse componenti dell'applicazione di comunicare e interagire tra loro e con altre applicazioni sul dispositivo.
+                        <br/><br/> Gli Intent possono essere utilizzati per:
+                            <li>Avviare un'altra Activity (interna alla stessa app o anche esterna)
+                            <li>Passare dei dati tra 2 Activity (inseriti nell'Intent come extra)
+                            <li>Avviare servizi (utilizzato per operazioni lunghe e asincrone)
+                            <li>Eseguire operazioni di broadcast (inviare e ricevere messaggi di broadcast)
+                            <li>Avviare un'applicazione esterna: (es un’attività di composizione per inviare mail)
+                        
+                        <br/><br/>Gli Intent possono essere:
+                            <li>Espliciti --> richiamo una determinata Activity
+                            <li>Impliciti --> faccio una richiesta broadcast (es. per il gestore delle telefonate)
+
+                    </h4>
+
+					<!-- START ACTIVITY -->
+                    <h2><font color="blue">StartActivity e StartAcitivtyForResult</font></h2>
+                    <h4>startActivity
+                        <li>Fa partire la 2° Activity e non si preoccupa di essa
+                        <li>Usato per avviare un'altra attività che visualizza solo informazioni o esegue un'azione senza restituire dati all'attività chiamante
+                        <br/><br/>startActivityForResult
+                        <li>Si preoccupa di analizzare il risultato
+                        <li>Viene utilizzato quando l'attività avviata deve restituire dati all'attività chiamante (per esempio il risultato di input dell'utente)
+                    </h4>
 
 					<!-- LINK FONTI -->
 					<h5><a href="https://www.android.com" target="new">android.com</a> &nbsp; <a href="https://it.wikipedia.org/wiki/Android" target="new">wikipedia</a> &nbsp; <a href="https://www.html.it/guide/guida-android/" target="new">html.it</a></h5>
@@ -128,7 +301,7 @@
 						</div>
 						<!-- SUCCESSIVO -->
 						<div class="col-4 off-4 buttonDownload">
-							<a href="#" class="button fit small">AVANTI</a>
+							<a href="./android_esercizi.html" class="button fit small">AVANTI</a>
 						</div>
 					</div>
 					<!-- FINE BUTTON -->
